@@ -28,11 +28,11 @@ export const dateNow = () => {
 //     const yesterday = todayNow() - num;
 //     return yesterday
 // }
-// export const thirtyMinutesAgo = () => {
-//     const now = new Date().getTime();
-//     const since = now - 180000;
-//     return since;
-// }
+export const thirtyMinutesAgo = () => {
+    const now = new Date().getTime();
+    const since = now - 180000;
+    return since;
+}
 
 // export const timeSince = (ago) => {
 //     const now = new Date().getTime();

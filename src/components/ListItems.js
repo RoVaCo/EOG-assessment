@@ -3,6 +3,8 @@ import { RetrieveMeasurments } from './Measurements';
 import MetricLister from './ListBuilder';
 
 export const GetMeasurments = props => {
+    //const now = new Date().getTime();
+    //console.log(now);
     RetrieveMeasurments(props);
     return null
 }

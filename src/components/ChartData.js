@@ -9,8 +9,7 @@ export const ChartData = () => {
     if (typeof readings === 'undefined') { return null }
     var workData = [];
     var readingUnit = null;
-    // Having an issue with apollo and hooks. Temporary work around 
-    for (var i = readings.length - 100; i < readings.length; i++) {
+    for (var i = 0; i < readings.length; i++) {
         var reading = {};
         readingUnit = readings[i]["unit"];
         reading.temperature = readings[i]["value"];
