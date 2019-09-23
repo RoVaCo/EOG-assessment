@@ -9,7 +9,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MyAvatar from './MyAvatar';
 import { GetMeasurments } from './ListItems';
 
-
 const useStyles = makeStyles({
   grow: {
     flexGrow: 1
@@ -19,6 +18,7 @@ const useStyles = makeStyles({
 export default () => {
   const classes = useStyles();
 
+  // is s' or s's the proper punctuation? 
   const name = "VanCollins's";
   return (
     <AppBar position="static">

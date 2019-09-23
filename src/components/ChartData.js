@@ -9,6 +9,7 @@ export const ChartData = () => {
     if (typeof readings === 'undefined') { return null }
     var workData = [];
     var readingUnit = null;
+    // Having an issue with apollo and hooks. Temporary work around 
     for (var i = readings.length - 100; i < readings.length; i++) {
         var reading = {};
         readingUnit = readings[i]["unit"];
@@ -28,9 +29,7 @@ export const ChartData = () => {
                 <h4> {titleData} </h4>
                 <ResponsiveContainer width="100%" height="90%" aspect={1.75}>
                     <LineChart data={data} margin={{ top: 24, right: 10, bottom: 12, left: 24, }} >
-                        <XAxis dataKey="time" label={{ value: "Seconds Ago", position: "outsideMiddle", dy: 15 }}>
-                            {/* rechart xAxix label appears to not be functional */}
-                            {/* <Label angle={0} style={{ textAnchor: 'middle', dy: 10 }}>Seconds Ago</Label><Label value="LBs" /> */}
+                        <XAxis dataKey="time" label={{ value: "Seconds Ago", dy: 15 }}>
                         </XAxis>
                         <YAxis type="number" domain={['dataMin', 'dataMax']} >
                             <Label angle={270} position="left" style={{ textAnchor: 'middle' }}>{yLabel}</Label>

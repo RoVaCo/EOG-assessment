@@ -1,3 +1,6 @@
+// #####################################
+// For use with the planned error reporting and event tracking functions if time permits
+
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import { withStyles } from "@material-ui/core/styles";
@@ -15,3 +18,5 @@ const styles = theme => ({
 const MyAvatar = () => { return (<Avatar alt="Portrait of Van" src={require("../images/60x60.png")} />) };
 
 export default withStyles(styles)(MyAvatar);
+
+

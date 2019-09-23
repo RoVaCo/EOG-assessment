@@ -7,7 +7,7 @@ const initialState = {
   locationName: ""
 };
 
-const toF = c => (c * 9) / 5 + 32;
+const toF = c => Math.round(((c * 9) / 5 + 32) * 100) / 100;
 
 const weatherDataRecevied = (state, action) => {
   const { getWeatherForLocation } = action;

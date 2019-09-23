@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from "@material-ui/core/Avatar";
-
 import * as actions from "../store/actions";
-
 import { MetricReport } from "./MetricNames";
 
 const MetricLister = ({ setMetric }) => {
@@ -19,8 +17,6 @@ const MetricLister = ({ setMetric }) => {
     }
     return <div>{menu}</div>
 }
-
-
 
 const mapStatetoProps = (state) => { return { metricSelected: state.metricSelected } };
 const mapDispatchtoProps = dispatch => ({

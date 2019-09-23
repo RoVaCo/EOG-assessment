@@ -4,22 +4,6 @@ export const todayNow = () => {
     return today;
 }
 
-export const wayBack = (num) => {
-    const yesterday = todayNow() - num;
-    return yesterday
-}
-export const thirtyMinutesAgo = () => {
-    const now = new Date().getTime();
-    const since = now - 180000;
-    return since;
-}
-
-export const timeSince = (ago) => {
-    const now = new Date().getTime();
-    const since = now - (ago * 6000);
-    return since;
-}
-
 export const timeNow = () => {
     const today = todayNow();
     const H = today.getHours();
@@ -37,11 +21,30 @@ export const dateNow = () => {
     return date
 }
 
-export const lastday = (e) => {
-    const timeStamp = (new Date() - e) / 1000
-    return timeStamp
+// #####################################
+// For use in improved chart functions if time permits
 
-}
+// export const wayBack = (num) => {
+//     const yesterday = todayNow() - num;
+//     return yesterday
+// }
+// export const thirtyMinutesAgo = () => {
+//     const now = new Date().getTime();
+//     const since = now - 180000;
+//     return since;
+// }
+
+// export const timeSince = (ago) => {
+//     const now = new Date().getTime();
+//     const since = now - (ago * 6000);
+//     return since;
+// }
+
+// export const lastday = (e) => {
+//     const timeStamp = (new Date() - e) / 1000
+//     return timeStamp
+
+// }
 
 
 
