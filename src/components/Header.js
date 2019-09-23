@@ -7,6 +7,8 @@ import Weather from "./Weather";
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MyAvatar from './MyAvatar';
+import { GetMeasurments } from './ListItems';
+
 
 const useStyles = makeStyles({
   grow: {
@@ -17,7 +19,7 @@ const useStyles = makeStyles({
 export default () => {
   const classes = useStyles();
 
-  const name = "VanCollins's";
+  const name = "VanC's";
   return (
     <AppBar position="static">
       <Toolbar>
@@ -30,6 +32,7 @@ export default () => {
             <NotificationsIcon />
           </Badge>
         </MyAvatar>
+        <GetMeasurments />
       </Toolbar>
     </AppBar>
   );

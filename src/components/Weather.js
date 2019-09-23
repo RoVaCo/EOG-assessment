@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../store/actions";
 import { Provider, createClient, useQuery } from "urql";
-import { useGeolocation } from "react-use";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Chip from "./Chip";
+import { timeNow, dateNow } from "./Counting"
 
 const client = createClient({
   url: "https://react.eogresources.com/graphql"
@@ -22,6 +22,7 @@ query($latLong: WeatherQuery!) {
 
 const getWeather = state => {
   const { temperatureinFahrenheit, description, locationName } = state.weather;
+
   return {
     temperatureinFahrenheit,
     description,
@@ -38,24 +39,21 @@ export default () => {
 };
 
 const Weather = () => {
-  const getLocation = useGeolocation();
+  //const getLocation = useGeolocation();
   // Default to houston
   const latLong = {
-    latitude: getLocation.latitude || 29.7604,
-    longitude: getLocation.longitude || -95.3698
+    latitude: /*getLocation.latitude || */ 29.7604,
+    longitude: /*getLocation.latitude || */ -95.3698
   };
+
   const dispatch = useDispatch();
   const { temperatureinFahrenheit, description, locationName } = useSelector(
     getWeather
   );
 
-  const [result] = useQuery({
-    query,
-    variables: {
-      latLong
-    }
-  });
+  const [result] = useQuery({ query, variables: { latLong } });
   const { fetching, data, error } = result;
+
   useEffect(
     () => {
       if (error) {
@@ -72,8 +70,9 @@ const Weather = () => {
   if (fetching) return <LinearProgress />;
 
   return (
+
     <Chip
-      label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`}
+      label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}° At ${timeNow()} ${dateNow()}`}
     />
   );
 };
