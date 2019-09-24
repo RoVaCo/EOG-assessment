@@ -12,9 +12,7 @@ import { mainListItems } from './ListItems';
 import { ChartData } from './ChartData';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-    },
+    root: { display: 'flex', },
 
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -33,17 +31,7 @@ const useStyles = makeStyles(theme => ({
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
-    drawerPaperClose: {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-        },
-    },
+
     appBarSpacer: theme.mixins.toolbar,
     content: {
         flexGrow: 1,
@@ -51,15 +39,12 @@ const useStyles = makeStyles(theme => ({
         overflow: 'auto',
     },
     container: {
-        paddingTop: theme.spacing(4),
+        paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(4),
         paddingRight: theme.spacing(4),
-
-
     },
     paper: {
-
-        padding: theme.spacing(2),
+        padding: theme.spacing(1),
         display: 'flex',
         width: "90%",
         height: "90%",
@@ -68,7 +53,6 @@ const useStyles = makeStyles(theme => ({
     },
     fixedHeight: {
         height: "80vh",
-        //width: "75vw"
     },
     main: {
         background_color: "#eb24f2",
@@ -78,21 +62,13 @@ const useStyles = makeStyles(theme => ({
 
 export default function Dashboard() {
     const classes = useStyles();
-    //const [open, setOpen] = React.useState(true);
-
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <Drawer
-                variant="permanent"
-                classes={{
-                    paper: clsx(classes.drawerPaper),
-                }}
-            >
-                <div className={classes.toolbarIcon}>
-                </div>
+            <Drawer variant="permanent" classes={{ paper: clsx(classes.drawerPaper), }}>
+                <div className={classes.toolbarIcon}></div>
                 <Divider />
                 <List>{mainListItems}</List>
                 <Divider />
@@ -104,7 +80,6 @@ export default function Dashboard() {
                         <Grid item xs={12} md={8} lg={9}>
                             <Paper className={fixedHeightPaper}>
                                 <div><ChartData /></div>
-
                             </Paper>
                         </Grid>
                     </Grid>

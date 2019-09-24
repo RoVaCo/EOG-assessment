@@ -31,5 +31,5 @@ export const RetrieveMeasurments = now => {
     if (error) { dispatch({ type: actions.API_ERROR, error: error.message }); return <h4> error </h4>; };
     const [readingRecevied] = data.getMultipleMeasurements
     dispatch({ type: actions.MEASURMENTS_RECEIVED, readingRecevied });
-    return readingRecevied;
+    return null;
 };

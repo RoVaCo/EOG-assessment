@@ -28,8 +28,7 @@ export const ChartData = () => {
                 <h4> {titleData} </h4>
                 <ResponsiveContainer width="100%" height="90%" aspect={1.75}>
                     <LineChart data={data} margin={{ top: 24, right: 10, bottom: 12, left: 24, }} >
-                        <XAxis dataKey="time" label={{ value: "Seconds Ago", dy: 15 }}>
-                        </XAxis>
+                        <XAxis dataKey="time" label={{ value: "Seconds Ago", dy: 15 }}> </XAxis>
                         <YAxis type="number" domain={['dataMin', 'dataMax']} >
                             <Label angle={270} position="left" style={{ textAnchor: 'middle' }}>{yLabel}</Label>
                         </YAxis>
