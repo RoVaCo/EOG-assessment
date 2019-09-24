@@ -3,9 +3,8 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../store/actions";
-import * as counting from './Counting';
 
-const now = new Date().getTime()
+// const now = new Date().getTime()
 
 const query = gql`
 query GetMeasurments($metric: String! $after: Timestamp)

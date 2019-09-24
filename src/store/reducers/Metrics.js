@@ -11,9 +11,7 @@ const metricsRecieved = (state, action) => {
 
 const handlers = {
     [actions.METRIC_LIST_RECEIVED]: metricsRecieved
-
 };
-
 
 export default (state = initialState, action) => {
     const handler = handlers[action.type];

@@ -6,7 +6,6 @@ const metricSelected = (state, action) => {
     const metric = action.metricSelected;
     console.log(metric);
     return (metric);
-
 };
 
 const handlers = { [actions.METRIC_SELECTED]: metricSelected };
