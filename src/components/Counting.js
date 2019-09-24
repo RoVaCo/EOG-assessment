@@ -6,7 +6,7 @@ export const todayNow = () => {
 
 export const timeNow = () => {
     const today = todayNow();
-    const H = today.getHours() - 1;
+    const H = today.getHours();
     const meridiem = (H < 12 || H === 24) ? "AM" : "PM"
     const Hr = (meridiem === "AM" || H === 12) ? H : H - 12;
     const M = (today.getMinutes() >= 10) ? today.getMinutes() : '0' + today.getMinutes();

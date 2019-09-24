@@ -22,7 +22,7 @@ query GetMeasurments($metric: String! $after: Timestamp)
 
 export const RetrieveMeasurments = now => {
     let metric = useSelector((state) => state.metricSelected);
-    const [after, setAfter] = useState((new Date().getTime()) - 180000);
+    const [after] = useState((new Date().getTime()) - 180000);
     console.log(after);
     const dispatch = useDispatch();
     const { loading, error, data } = useQuery(
